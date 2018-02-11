@@ -16,6 +16,23 @@
             }).then(function (response) {
                 return response.data;
             });   
+        };
+
+        this.valores_produtos_grafico = function() {
+            return $http({
+                headers: {
+                    "Content-Type": "application/json; charset=utf-8"
+                },
+                url: '/estoque/tipo-produto',
+                responseType: 'json',
+                method: "GET",
+                params: {
+                    format: 'jsonp',
+                    callback: 'JSON_CALLBACK'
+                }
+            }).then(function (response) {
+                return response.data;
+            });   
         }
 
     }
